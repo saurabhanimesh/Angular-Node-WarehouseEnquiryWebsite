@@ -1,0 +1,69 @@
+<div class="form-outer-cover">
+  <form [formGroup]="profileForm" class="form-cover">
+    <div class="input-fields-cover">
+      <label class="labels" for="name">Name: </label>
+      <input id="name" placeholder="Name" type="text" formControlName="name" />
+      <div class="error-message">
+        <div
+          *ngIf="profileForm.controls['name'].valid; else elseBlock"
+          class="correct-validation-message"
+        >
+          ✔
+        </div>
+        <ng-template #elseBlock
+          ><div class="incorrect-validation-message">❌</div></ng-template
+        >
+      </div>
+    </div>
+
+    <div class="input-fields-cover">
+      <label class="labels" for="email">Email: </label>
+      <input id="email" placeholder="Email" type="email" formControlName="email" />
+      <div class="error-message">
+        <div
+          *ngIf="profileForm.controls['email'].valid; else elseBlock"
+          class="correct-validation-message"
+        >
+          ✔
+        </div>
+        <ng-template #elseBlock
+          ><div class="incorrect-validation-message">❌</div></ng-template
+        >
+      </div>
+    </div>
+    <div class="input-fields-cover">
+      <label class="labels"  for="phone">Phone Number: </label>
+      <input [(ngModel)]="checkPhone" placeholder="Phone Number"  id="phone" type="number" formControlName="phoneNo" />
+      <div class="error-message">
+        <div
+          *ngIf="profileForm.controls['phoneNo'].valid && checkPhone.toString().length > 10; else elseBlock"
+          class="correct-validation-message"
+        >
+          ✔
+        </div>
+        <ng-template #elseBlock
+          ><div class="incorrect-validation-message">❌</div></ng-template
+        >
+      </div>
+    </div>
+    <div class="input-fields-cover">
+      <label class="labels"  for="requirement">Requirement: </label>
+      <textarea id="requirement" placeholder="Requirement" formControlName="requirement" ></textarea>
+      <div class="error-message">
+        <div
+          *ngIf="profileForm.controls['requirement'].valid; else elseBlock"
+          class="correct-validation-message"
+        >
+          ✔
+        </div>
+        <ng-template #elseBlock
+          ><div class="incorrect-validation-message">❌</div></ng-template
+        >
+      </div>
+    </div>
+    <div class="input-button-cover">
+      <button (click)="signUp()" class="sign-up" type="submit">Submit</button>
+    </div>
+  </form>
+</div>
+<ngx-ui-loader></ngx-ui-loader>

@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+
+
+.example-card {
+    max-width: 470px;
+    font-family: "Marcellus", serif;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .example-header-image {
+    background-image: url('../../../assets/APIPL.jpg');
+    background-size: cover;
+  }
+
+  .about-cards{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+
+  }
+
+  .content-about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Marcellus", serif;
+    font-size: 18px;
+    
+  }
